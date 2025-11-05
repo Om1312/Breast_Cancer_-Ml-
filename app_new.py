@@ -2,11 +2,14 @@ import streamlit as st
 import numpy as np
 import pickle
 
-# ----------------------------
-# ✅ Load Your Saved Model
-# ----------------------------
-with open("bestcancer_ml.pkl", "rb") as f:   # NOTE: space before .pkl
+# IMPORT MODEL CLASSES USED IN PICKLE
+from sklearn.svm import SVC
+from sklearn.preprocessing import StandardScaler
+
+# Load pickle model
+with open("bestcancer_ml.pkl", "rb") as f:
     model = pickle.load(f)
+
 
 # ----------------------------
 # ✅ Streamlit Page Config
